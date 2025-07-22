@@ -1,163 +1,193 @@
 
-console.log("hello every body");
-
 var user={
 Name :"sherien sallam bakri",
  age:21,
  gender:"female",
  job:"stydent",
- salary:"nothing"
+ salary:20000,
+ city:"fayoum",
+ id:123,
+ gradiant:false,
+ language:["html","css"],
+ brother : {
+    age:23,
+    fname:"mahmoud",
+    gender:"male",
+     son: {
+     firstName: "mohamed",
+     age: 10,
+     gender: "male"
+        }
+ },
+ eat:function(para){
+    console.log("she is eating");
 }
-console.log("my name is ",user.Name);
-console.log("age ",user.age);
-console.log("gender",user.gender);
-console.log(user.job);
-console.log(user.salary);
-
-
-//functin 1
- function getCalculation(number1,number2){
-    var sum=number1+number2;
-    var difference=number1-number2;
-    var multiplication=number1*number2;
-    var divition=number1/number2;
-    var modulus=number1%number2;
-    var root1=Math.sqrt(number1);
-   var root2=Math.sqrt(number2);
-    console.log("sum: ",number1,"+",number2,"  ",sum);
-    console.log("difference: ",number1,"-",number2,"  ",difference);
-    console.log("multiplication: ",number1,"*",number2,"  ",multiplication);
-    console.log("divition: ",number1,"/",number2,"  ",divition);
-    console.log("modulus: ",number1,"%",number2,"  ",modulus);
-    console.log("root1of: ",number1,"is",root1);
-     console.log("root2of: ",number2,"is",root2);
-     console.log(number1**number2);
 }
-getCalculation(25,10);
+console.log(user.brother.fname);
+console.log(user.brother.son.firstName);
+console.log(user["gender"]);
+console.log(user.language[0]);
+ user.eat();
+console.log(user);
+//------------------------------------------------------------
+var person = {
+   Name:"mohamed",
+   id:222
+};
+console.log(person.Name);
+person.age=28;
+console.log(person.age);
+person.Name= "sherien"
+console.log(person.Name);
+delete person.id;
+console.log(person);
+//------------------------------------------------------------
+var object1 = {
+    first: "mohamed",
+    last: "ziad",
+    test: 25,
+}
+console.table(object1);
+//-----------------------------------------------------------
+var names=["ahmed","sherien","safia","ziad","hanen","atef"];
+for(var i=0;i<names.length;i++){
+console.log(names[i]);
+}
+console.log(names.sort());
+names.push("hany");
+console.log(names);
+var y=names.unshift("sallam");
+console.log(y);
+var b=names.pop();
+console.log(b);
+var t=names.shift();
+console.log(t);
+names.reverse();
+console.log(names);
+var v=names.slice(0,2);
+console.log(v);
+names.splice(1, 2, "Nour", "saad");
+var index = names.lastIndexOf("Khalil"); 
+console.log(index);
+var result = names.includes("Ali");
+console.log(result);
+var i = names.indexOf("Ali");
+console.log(i);
+var string_Array =names.toString();
+console.log(string_Array);
+//--------------------------------------------------------------
+var myString = "my name is sherien sallam";
+var check = myString.charAt(4); 
+var check = myString[8]; 
+var check = myString.at(7); 
+var check = myString.slice(4); 
+var check = myString.toLowerCase(); 
+var check = myString.toUpperCase(); 
+var check = myString.concat("bakri"); 
+var check = myString.split("/"); 
+//------------------------------------------------------------------------
+var element = document.getElementById("demo"); 
+var elements = document.querySelectorAll("#demo"); 
+console.log(elements);
+var elements = document.getElementsByClassName("item");
+console.log(elements);
+for ( var i = 0; i < elements.length; i++ ) {
+    console.log(elements[i]);
+}
+var e = document.getElementsByTagName("p"); 
+console.log(e);
+var el = document.getElementsByName("test");
+console.log(el);
+var elements = document.querySelectorAll(".item h2");
+console.log(elements);
+//---------------------------------------------
+var headings=document.querySelectorAll("h3.index");
+console.log(headings);
+function sayhello(Name){
+    console.log("hello",Name);
+}
+for(var i=0;i<headings.length;i++){
+    headings[i].addEventListener("click",function(){
+        sayhello("sherien");
+    })
+}
+//---------------------------------------
+var headings=document.querySelector("h3");
+document.body.addEventListener("mouseenter",function(){
+    headings.style.cssText="color:red";
+    headings.style.backgroundColor="green"
+})
+//----------------------------------------------
+var x=document.createElement("div");
+document.body.appendChild(x);
+x.setAttribute("class","demo");
+var y=document.createTextNode("sherien sallam");
+x.appendChild(y);
+//------------------------------------------------
+document.body.addEventListener("click", function(eve){
+    console.log(eve);
+    console.log(eve.clientX);
+    console.log(eve.target);
+})
+//----------------------------------------------------------
+var elem = document.querySelector(".item");
+elem.addEventListener("click", function(){
+    console.log("Hello world");
+})
+elem.addEventListener("dblclick", function(){
+    console.log("hello world");
+})
 
-//functin 2
-function comparison(number1,number2){
-    if(number1>number2){
-        console.log("number1 is greater than number2");
+// document.addEventListener("contextmenu", function(e){
+//     console.log("hi");
+//     e.preventDefault(); 
+// })
+
+document.addEventListener("mousemove", function(){
+    console.log("Hello every body");
+})
+document.addEventListener("mousedown", function(){
+    console.log("hello my brothers");
+})
+
+document.addEventListener("mouseup", function(){
+    console.log("any thing");
+})
+
+document.addEventListener("mouseenter", function(){
+    console.log("sheel eidek");
+})
+
+document.addEventListener("mouseleave", function(){
+    console.log("mouse left");
+})
+var image = document.querySelector("img")
+image.addEventListener("drag", function(){
+    console.log("the image moved");
+})
+
+document.addEventListener("keydown", function(e){
+    console.log("The user used the keyboard");
+    console.log(e.key);
+})
+
+document.addEventListener("keypress", function(){
+    console.log("The user used  keyboard to write");
+})
+document.addEventListener("keyup", function(){
+    console.log("sheel eidek");
+})
+
+document.addEventListener("keydown", function(e){
+    console.log("dont touch");
+    if(e.key == 'F6') {
+        e.preventDefault();
     }
-     else if(number1<number2){
-        console.log("number1 is smaller than number2");
-    }
-     else if(number1==number2){
-        console.log("number1 is equal to number2");
-    }
-}
-comparison(20,20);
-
-//functin 3
-function check_1(num){
-   if(num>0){
-    console.log("num is positive");
-}
-else if(num<0){
-    console.log("num is negative");
-}
-else if(num==0){
-    console.log("num is zero");
-} 
-}
-check_1(20);
-
-
-//functin 4
-function check_2(number){
-   if(number%2==0){
-    console.log("num is even");
-}
-else if(number%2!=0){
-    console.log("num is odd");
-}
-else if(number==0){
-    console.log("num is zero");
-}
-}
-check_2(3);
-
-
-//functin 5
-function multiplication_table(number)
-{
-for(var i=1;i<10;i++)
-{
-    console.log("number","*",i,"=  ",number*i);
-}
-}
-multiplication_table(2);
-
-
-//functin 6
-function sum(number){
- if(Number(number))
- {
-    var total=0;
-    for(var i=1;i<=number;i++){
-        total+=i;
-    }
-    console.log(" is:",total);
- }
- else{
-    console.error("please enter valid number")
- }
-}
-sum("sd");
-
-
-//functin 7
-function countlatters(text){
-    var count=0;
-    for(var i=0;i<text.length;i++){
-    if(text[i]=="s")
-    {
-        count++;
-    }
-    }
-    console.log("count letters",count);
-}
- countlatters("sherien sallam");
-
-
-//functin 8
-function factorial(number){
-    if(Number(number)&&number>=0){
-        var fact=1;
-    for(var i=1;i<number;i++){
-    fact=fact*i;
-    }
-    console.log("factorial = ",fact);
-    }
-else{
-console.error("please enter positive number");
-}
-}
- factorial(5);
-
-//function 9
-function sumEven(number){
-var sum=0;
-for(var i=0;i<=number;i++){
-    if(i%2==0)
-    {
-        sum+=i;
-    }
-     }
-     console.log("sum of even number = ",sum);
-}
-sumEven(6);
-
-//function 10
-function sumOdd(number){
-var sum=0;
-for(var i=0;i<=number;i++){
-    if(i%2!=0)
-    {
-        sum+=i;
-    }
-     }
-     console.log("sum of odd number = ",sum);
-}
-sumOdd(9);
+})
+var input = document.querySelector("input")
+input.addEventListener("focus", function(){
+    console.log("user click her");
+})
+input.addEventListener("blur", function(){
+    console.log(" user leave this input");
+})
